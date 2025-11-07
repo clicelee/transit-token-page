@@ -7,7 +7,15 @@ function App() {
     return new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Detroit' }));
   };
 
+  const getExpiryTime = (baseTime) => {
+    const expiry = new Date(baseTime);
+    expiry.setHours(expiry.getHours() + 3);
+    expiry.setMinutes(expiry.getMinutes() + 50);
+    return expiry;
+  };
+
   const [currentTime, setCurrentTime] = useState(getMichiganTime());
+  const [expiryTime, setExpiryTime] = useState(getExpiryTime(getMichiganTime()));
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -29,8 +37,26 @@ function App() {
     return `${hours}:${minutesStr}:${secondsStr} ${ampm}`;
   };
 
+  const formatExpiryTime = (date) => {
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const month = months[date.getMonth()];
+    const day = date.getDate();
+    const year = date.getFullYear();
+    
+    let hours = date.getHours();
+    const minutes = date.getMinutes();
+    const ampm = hours >= 12 ? 'AM' : 'PM';
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    const minutesStr = minutes < 10 ? '0' + minutes : minutes;
+    
+    return `Expires ${month} ${day}, ${year} at ${hours}:${minutesStr} ${ampm}`;
+  };
+
   const handleLogoClick = () => {
-    setCurrentTime(getMichiganTime());
+    const newTime = getMichiganTime();
+    setCurrentTime(newTime);
+    setExpiryTime(getExpiryTime(newTime));
   };
 
   return (
@@ -61,7 +87,7 @@ function App() {
         <div className="ticket-info-card">
           <h2 className="ticket-name">WayneRide Fall 2025 - 4 Hour</h2>
           <p className="ticket-location">Detroit, MI</p>
-          <p className="ticket-expiry">Expires Nov 7, 2025 at 1:22 AM</p>
+          <p className="ticket-expiry">{formatExpiryTime(expiryTime)}</p>
         </div>
       </div>
     </div>
