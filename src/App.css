@@ -72,33 +72,28 @@
   justify-content: center;
 }
 
-.progress-ring {
-  position: absolute;
-  transform: rotate(-90deg);
-}
-
-.progress-ring-circle {
-  transition: stroke-dashoffset 0.35s;
-  stroke-dasharray: 779.5;
-  stroke-dashoffset: 0;
-  stroke-linecap: round;
-}
-
 .token-logo {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: white;
+  width: 280px;
+  height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  user-select: none;
+}
+
+.token-logo:hover {
+  transform: scale(1.02);
+}
+
+.token-logo:active {
+  transform: scale(0.98);
 }
 
 .token-logo img {
-  width: 140px;
-  height: auto;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 

@@ -1,8 +1,0 @@
-<svg width="200" height="60" xmlns="http://www.w3.org/2000/svg">
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="600" fill="#1e3a8a" letter-spacing="2">
-    DART
-  </text>
-  <line x1="10" y1="30" x2="40" y2="30" stroke="#1e3a8a" stroke-width="3" stroke-linecap="round"/>
-  <polygon points="35,30 28,26 28,34" fill="#1e3a8a"/>
-</svg>
-

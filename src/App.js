@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import dartLogo from './assets/dart-logo.svg';
+import dartLogo from './assets/dart-logo.png';
 
 function App() {
-  const [currentTime, setCurrentTime] = useState(new Date());
+  const getMichiganTime = () => {
+    return new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Detroit' }));
+  };
+
+  const [currentTime, setCurrentTime] = useState(getMichiganTime());
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentTime(new Date());
+      setCurrentTime(getMichiganTime());
     }, 1000);
 
     return () => clearInterval(timer);
@@ -25,6 +29,10 @@ function App() {
     return `${hours}:${minutesStr}:${secondsStr} ${ampm}`;
   };
 
+  const handleLogoClick = () => {
+    setCurrentTime(getMichiganTime());
+  };
+
   return (
     <div className="app">
       <div className="ticket-container">
@@ -37,18 +45,7 @@ function App() {
         </div>
 
         <div className="token-circle-container">
-          <svg className="progress-ring" width="280" height="280">
-            <circle
-              className="progress-ring-circle"
-              stroke="#1e3a8a"
-              strokeWidth="32"
-              fill="transparent"
-              r="124"
-              cx="140"
-              cy="140"
-            />
-          </svg>
-          <div className="token-logo">
+          <div className="token-logo" onClick={handleLogoClick}>
             <img src={dartLogo} alt="DART Logo" />
           </div>
         </div>
