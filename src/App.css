@@ -34,7 +34,7 @@
 }
 
 .title {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 700;
   color: #3a3a3a;
   margin: 0;
@@ -102,7 +102,7 @@
 }
 
 .time-display {
-  font-size: 55px;
+  font-size: 45px;
   font-weight: 700;
   color: #3a3a3a;
   text-align: center;
@@ -172,7 +172,7 @@
   }
   
   .title {
-    font-size: 20px;
+    font-size: 30px;
   }
   
   .subtitle {
@@ -180,7 +180,7 @@
   }
   
   .time-display {
-    font-size: 64px;
+    font-size: 54px;
   }
   
   .wsu-badge {
@@ -195,7 +195,7 @@
   }
   
   .title {
-    font-size: 20px;
+    font-size: 30px;
   }
   
   .subtitle {
@@ -203,7 +203,7 @@
   }
   
   .time-display {
-    font-size: 58px;
+    font-size: 48px;
   }
   
   .wsu-badge {
@@ -222,7 +222,7 @@
   }
   
   .title {
-    font-size: 20px;
+    font-size: 30px;
   }
   
   .subtitle {
@@ -230,7 +230,7 @@
   }
   
   .time-display {
-    font-size: 52px;
+    font-size: 42px;
   }
   
   .wsu-badge {
